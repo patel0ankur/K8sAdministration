@@ -1,0 +1,16 @@
+# k8_nginx_ingress
+
+
+kubectl apply -f apple.yaml
+
+kubectl apply -f banana.yaml
+
+
+Create Ingress to the cluster
+
+kubectl create -f ingress.yaml
+
+curl -kL http://localhost/apple
+
+curl -kL http://localhost/banana
+
