@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bee
+  labels:
+    name: bee
+spec:
+  containers:
+  - name: bee
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
+  tolerations:
+  - key: "spray"
+    value: "mortein"
+    effect: "NoSchedule"
+    operator: "Equal"
+
+# kubectl taint nodes node01 key=value:effect
+# kubectl taint nodes node01 spray=mortein:Noschedule
+
+
+
+
+
