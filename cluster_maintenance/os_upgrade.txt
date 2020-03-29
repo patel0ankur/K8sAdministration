@@ -1,0 +1,18 @@
+# Envict the pods on the Node:
+kubectl drain [node-name] --ignore-daemonsets
+
+# schedule pods on the Node:
+kubectl uncordon [node-name]
+
+# Unschedule pods on the Node:
+kubectl cordon [node-name]
+
+# List the current tokens:
+kubectl token list 
+
+# Get a new token to join:
+kubectl token generate
+
+# Join Command on Slave Node:
+kubeadm token create <token name> --ttl 23h --print-join-command
+

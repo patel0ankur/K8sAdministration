@@ -1,0 +1,47 @@
+# get the version of the api server
+kubectl version --short
+
+# view the version of kubelet
+kubectl describe nodes 
+
+# view the version of controller-manager pod
+kubectl get po [controller_pod_name] -o yaml -n kube-system
+
+# release the hold on versions of kubeadm and kubelet
+sudo apt-mark unhold kubeadm kubelet
+
+# install version 1.16.6 of kubeadm
+sudo apt install -y kubeadm=1.16.6-00
+
+# hold the version of kubeadm at 1.16.6
+sudo apt-mark hold kubeadm
+
+# verify the version of
+kubeadm version
+
+# plan the upgrade of all the controller components
+sudo kubeadm upgrade plan
+
+# upgrade the controller components
+sudo kubeadm upgrade apply v1.16.6
+
+# release the hold on the version of kubectl
+sudo apt-mark unhold kubectl
+
+# upgrade kubectl
+sudo apt-install -y kubectl=1.16.6-00
+
+# hold the version of kubectl at 1.16.6
+sudo apt-mark hold kubectl
+
+# Upgrade kubelet to 1.16.6
+sudo apt install -y kubelet=1.16.6-00
+
+# hold the version of kubelet at 1.16.6
+sudo apt-mark hold kubelet
+
+# Worker Nodes:
+
+apt install kubeadm=1.17.0-00
+apt install kubelet=1.17.0-00
+kubeadm upgrade node config --kubelet-version $(kubelet --version | cut -d ' ' -f 2)
