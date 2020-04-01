@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: color
+  namespace: default
+spec:
+  containers:
+  - image: busybox
+    imagePullPolicy: Always
+    name: navy
+  - image: redis
+    imagePullPolicy: Always
+    name: blue

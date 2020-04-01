@@ -1,0 +1,12 @@
+In a multi-container pod, each container is expected to run a process that stays alive as long as the POD's lifecycle.
+If any of the container fails, the POD restarts.
+
+If the process that waits for other service to start before actual application starts is called initContainers.
+
+We can run multiple initContainers, but one at a time in sequential order. If can of the initContainers fails, the pod will restart
+repeatedly until the initContainers succedds.
+
+
+
+
+https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
