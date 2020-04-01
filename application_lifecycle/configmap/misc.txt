@@ -1,0 +1,41 @@
+kubectl create configmap <map-name> <data-source>
+kubectl create configmap game-config --from-file=configure-pod-container/configmap/
+
+When you are creating a ConfigMap based on a file, the key in the <data-source> defaults to the basename of the file, 
+and the value defaults to the file content
+
+
+1. ConfigMaps reside in a specific Namespace. A ConfigMap can only be referenced by pods residing in the same namespace.
+2. You can’t use ConfigMaps for static pods, because the Kubelet does not support this.
+
+
+Commands:
+kubectl logs my-configmap-pod
+kubectl logs my-configmap-volume-pod
+kubectl exec my-configmap-volume-pod -- ls /etc/config
+kubectl exec my-configmap-volume-pod -- cat /etc/config/myKey
+
+
+
+
+It's also possible to pass ConfigMap data to containers, in the form of file using a mounted volume, like so:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-configmap-volume-pod
+spec:
+  containers:
+  - name: myapp-container
+    image: busybox
+    command: ['sh', '-c', "echo $(cat /etc/config/myKey) && sleep 3600"]
+    volumeMounts:
+      - name: config-volume
+        mountPath: /etc/config
+  volumes:
+    - name: config-volume
+      configMap:
+        name: my-config-map
+
+
+

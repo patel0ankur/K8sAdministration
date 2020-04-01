@@ -1,0 +1,11 @@
+https://kubernetes.io/docs/concepts/cluster-administration/logging/
+
+Get the container's logs:
+kubectl logs counter
+
+For a multi-container pod, specify which container to get logs for using the -c flag:
+kubectl logs <pod name> -c <container name>
+
+Save container logs to a file:
+kubectl logs counter > counter.log
+
