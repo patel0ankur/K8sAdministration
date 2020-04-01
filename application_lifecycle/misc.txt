@@ -1,0 +1,34 @@
+Two type of application updates:
+
+a. Recreate
+b. Rolling updates
+
+
+
+Configuring applications: comprises of understanding the following concepts:
+
+a. Configuring Command and Arguments on applications
+b. Configuring Environment Variables
+c. Configuring Secrets
+
+
+Docker:
+
+CMD = Command ===== CMD ["5"]
+EntryPoint = To pass as an Arguments
+
+Example: 
+EntryPoint ["Sleep"] ===== To invoke sleep command automatically. It appends with 
+docker run command. 
+
+Docker run ubuntu-sleeper 5  (5 is passed as CMD["5"] in docker file)
+
+
+kubernetes         ========> Docker
+
+command: ["sleep"] ========> EntryPoint ["sleep"]
+args: ["10"]       ========> CMD["10"]
+ 
+
+
+
