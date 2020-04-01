@@ -1,15 +1,16 @@
-#Here's an example of a yaml descriptor for a ConfigMap containing some data: 
+#Here's an example of a yaml descriptor for a ConfigMap containing some data:
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
    name: my-config-map
+   namespace: default
 data:
    myKey1: myValue1
    myKey2: myValue2
 
 
-#Passing ConfigMap data to a container as an environment variable looks like this:
+#Passing ConfigMap data to a container as an environment variable: (configMapKeyRef)
 ---
 apiVersion: v1
 kind: Pod
