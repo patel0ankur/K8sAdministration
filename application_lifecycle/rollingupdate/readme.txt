@@ -32,3 +32,6 @@ handling stateful applications can be hard
 
 Development/staging environments: a recreate or ramped deployment is usually a good choice.
 Production: a ramped or blue/green deployment is usually a good choice, but proper testing of the new platform is necessary.
+
+Ingress:
+A Kubernetes Ingress is a robust way to expose your services outside the cluster. It lets you consolidate your routing rules to a single resource, and gives you powerful options for configuring these rules.
