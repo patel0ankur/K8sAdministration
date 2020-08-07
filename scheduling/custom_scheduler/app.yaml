@@ -1,4 +1,4 @@
-# create a custom scheduler using 'custom_scheduler.yaml' file. Use new schedulerName: my-scheduler
+# create a custom scheduler using 'custom_scheduler.yaml' file. Use schedulerName: my-scheduler to create a pod using the custom scheduler
 
 apiVersion: v1
 kind: Pod
@@ -8,4 +8,4 @@ spec:
   containers:
   -  image: nginx
      name: nginxmaster
-  schedulerName: my-scheduler
+  schedulerName: my-custom-scheduler

@@ -21,9 +21,10 @@ spec:
     operator: "Equal"
 
 # kubectl taint nodes node01 key=value:effect
-# kubectl taint nodes node01 spray=mortein:Noschedule
+# kubectl taint nodes node01 spray=mortein:NoSchedule
 
 
-
+# To remove the Taints:
+#kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule-
 
 

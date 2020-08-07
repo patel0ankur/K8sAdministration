@@ -32,6 +32,7 @@ spec:
 
 
 # When the pod runs, the command ls /etc/config/ produces the output below:
+# kubectl exec -it my-configmap-volume-pod -- ls /etc/config/
 # SPECIAL_LEVEL
 # SPECIAL_TYPE
 

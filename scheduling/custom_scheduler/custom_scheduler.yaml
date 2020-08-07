@@ -1,3 +1,5 @@
+#Use the file at /etc/kubernetes/manifests/kube-scheduler.yaml. Update the file with new configuration and then create the pod using the manifest file. 
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -17,7 +19,7 @@ spec:
     - --kubeconfig=/etc/kubernetes/scheduler.conf
     - --leader-elect=false
     - --port=10282
-    - --scheduler-name=my-scheduler
+    - --scheduler-name=my-custom-scheduler
     - --secure-port=0
     image: k8s.gcr.io/kube-scheduler-amd64:v1.16.0
     imagePullPolicy: IfNotPresent

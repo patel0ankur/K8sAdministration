@@ -18,7 +18,7 @@ spec:
         cpu: "100m"
   nodeName: node01
 
-# If pod is already created. We have create a binding object and send a post request to API serverless
+# If pod is already created and we have to assign it to the Node. We have to create a binding object and send a post request to API serverless. Below is the binding yaml used to send post request in Json format. 
 
 #pod-binding.yaml
 
